@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://apielgeladon-blue.onrender.com/paletas",
+      "url": "https://projeto2-api-elgeladon-fernando-nunes.onrender.com/paletas",
       "description": "API de produção Render"
     },
     {
