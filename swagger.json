@@ -13,14 +13,6 @@
     {
       "url": "https://projeto2-api-elgeladon-fernando-nunes.onrender.com/paletas",
       "description": "API de produção Render"
-    },
-    {
-      "url": "https://api-elgeladon.herokuapp.com/paletas",
-      "description": "API de produção Heroku"
-    },
-    {
-      "url": "http://localhost:3000/paletas",
-      "description": "API de teste"
     }
   ],
   "paths": {
