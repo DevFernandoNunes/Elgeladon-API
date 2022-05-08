@@ -11,12 +11,16 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/paletas",
-      "description": "API de teste"
+      "url": "https://apielgeladon-blue.onrender.com/paletas",
+      "description": "API de produção Render"
     },
     {
-      "url": "http://api-elgeladon.herokuapp.com.br/paletas",
-      "description": "API de produção"
+      "url": "https://api-elgeladon.herokuapp.com/paletas",
+      "description": "API de produção Heroku"
+    },
+    {
+      "url": "http://localhost:3000/paletas",
+      "description": "API de teste"
     }
   ],
   "paths": {
@@ -90,9 +94,9 @@
               "examples": {
                 "Paletas": {
                   "value": {
-                    "sabor": "Limão",
+                    "sabor": "Maracuja",
                     "descricao": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-                    "foto": "./assets/images/limao.png",
+                    "foto": "./assets/images/maracuja.png",
                     "preco": 4
                   }
                 }
@@ -231,16 +235,12 @@
                 "Carrinho": {
                   "value": [
                     {
-                      "paletaId": "623b31ba7467a2a2df45a1dev",
+                      "paletaId": "624230fdcd38269205c82197",
                       "quantidade": 5
                     },
                     {
-                      "paletaId": "623c976ab00d590d4efc4f2d",
+                      "paletaId": "62423c1e618f4a4738a5ee75",
                       "quantidade": 2
-                    },
-                    {
-                      "paletaId": "6241df697ce5d8172338ae3b",
-                      "quantidade": 16
                     }
                   ]
                 }
@@ -257,8 +257,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/Paletas"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Carrinho"
+                  }
                 }
               }
             }
@@ -308,7 +310,7 @@
             "type": "string"
           },
           "quantidade": {
-            "type": "string"
+            "type": "number"
           }
         }
       }

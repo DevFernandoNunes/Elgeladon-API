@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');   
-
+const mongoose = require('mongoose');
 
 const validId = (req, res, next) => {
   const idParam = req.params.id;
@@ -27,13 +26,15 @@ const validObjectBody = (req, res, next) => {
 
 const validObjectBodyCarrinho = (req, res, next) => {
   const carrinho = req.body;
+
   carrinho.forEach((item) => {
     if (!item || !item.paletaId || !item.quantidade) {
       return res
         .status(400)
-        .send({ message: 'Envie o todos os campos do carrinho!' });
+        .send({ message: 'Envie o todos campos das paletas!' });
     }
   });
+
   next();
 };
 

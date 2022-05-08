@@ -2,7 +2,7 @@ const carrinhoService = require('../services/carrinho.service');
 
 const findAllCarrinhoController = async (req, res) => {
   const allCarrinho = await carrinhoService.findAllCarrinhoService();
-  if (allCarrinho.length == 0) {
+  if (!allCarrinho) {
     return res
       .status(404)
       .send({ message: 'Não existe nenhum item no carrinho!' });
@@ -10,19 +10,19 @@ const findAllCarrinhoController = async (req, res) => {
   res.send(allCarrinho);
 };
 
-const createManyCarrinhoController = async (req, res) => {
+const createManyItemsCarrinhoController = async (req, res) => {
   const carrinho = req.body;
-  const newCarrinho = await carrinhoService.createManyCarrinhoService(carrinho);
+  const newCarrinho = await carrinhoService.createManyItemsCarrinhoService(carrinho);
   res.status(201).send(newCarrinho);
 };
 
-const deleteAllCarrinhoController = async (req, res) => {
-  await carrinhoService.deleteAllCarrinhoService();
+const deleteAllItemsCarrinhoController = async (req, res) => {
+  await carrinhoService.deleteAllItemsCarrinhoService();
   res.send({ message: 'Carrinho finalizado com sucesso!' });
 };
 
 module.exports = {
   findAllCarrinhoController,
-  createManyCarrinhoController,
-  deleteAllCarrinhoController,
+  createManyItemsCarrinhoController,
+  deleteAllItemsCarrinhoController,
 };
