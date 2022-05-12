@@ -1,4 +1,5 @@
-# API - El Geladon
+# Elgeladon-API
+
 
 ## Para acessar a API basta clicar no link: https://projeto2-api-elgeladon-fernando-nunes.onrender.com/paletas/api-docs/
 
